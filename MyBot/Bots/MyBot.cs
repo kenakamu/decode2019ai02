@@ -40,14 +40,14 @@ namespace MyBot
             {
                 var profile = (Profile)results.Result;
                 await turnContext.SendActivityAsync(MessageFactory.Text(
-                    $"ÇÊÇ§Ç±Çª{profile.PetPreference}ÇÃ{profile.Name}Ç≥ÇÒ"));
+                    $"„Çà„ÅÜ„Åì„Åù{profile.PetPreference}„ÅÆ{profile.Name}„Åï„Çì"));
             }
         }
 
         public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default)
         {
             await base.OnTurnAsync(turnContext, cancellationToken);
-            // ÉXÉeÅ[ÉgÇÃï€ë∂
+            // „Çπ„ÉÜ„Éº„Éà„ÅÆ‰øùÂ≠ò
             await conversationState.SaveChangesAsync(turnContext, false, cancellationToken);
             await userState.SaveChangesAsync(turnContext, false, cancellationToken);
         }

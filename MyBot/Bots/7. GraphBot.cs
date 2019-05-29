@@ -42,7 +42,7 @@ namespace MyBot
             else if (results.Status == DialogTurnStatus.Complete)
             {
                 await turnContext.SendActivityAsync(MessageFactory.Text(
-                        $"‰½‚ğ‚µ‚Ü‚·‚©H"));
+                        $"ä½•ã‚’ã—ã¾ã™ã‹ï¼Ÿ"));
             }
         }
 
@@ -55,7 +55,7 @@ namespace MyBot
         public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default)
         {
             await base.OnTurnAsync(turnContext, cancellationToken);
-            // ƒXƒe[ƒg‚Ì•Û‘¶
+            // ã‚¹ãƒ†ãƒ¼ãƒˆã®ä¿å­˜
             await conversationState.SaveChangesAsync(turnContext, false, cancellationToken);
             await userState.SaveChangesAsync(turnContext, false, cancellationToken);
         }

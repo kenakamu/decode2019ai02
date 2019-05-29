@@ -30,7 +30,7 @@ namespace MyBot
         public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default)
         {
             await base.OnTurnAsync(turnContext, cancellationToken);
-            // ƒZƒbƒVƒ‡ƒ“‚Ì•Û‘¶
+            // Æ’ZÆ’bÆ’VÆ’â€¡Æ’â€œâ€šÃŒâ€¢Ã›â€˜Â¶
             await conversationState.SaveChangesAsync(turnContext, false, cancellationToken);
             await userState.SaveChangesAsync(turnContext, false, cancellationToken);
         }

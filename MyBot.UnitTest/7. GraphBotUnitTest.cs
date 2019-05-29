@@ -15,7 +15,7 @@ namespace MyBot.UnitTest
         [TestMethod]
         public async Task ShouldReplySchedule()
         {
-            // ƒXƒe[ƒgŠÇ—
+            // ã‚¹ãƒ†ãƒ¼ãƒˆç®¡ç†
             IStorage dataStore = new MemoryStorage();
             var conversationState = new ConversationState(dataStore);
             var userState = new UserState(dataStore);
@@ -23,9 +23,9 @@ namespace MyBot.UnitTest
             var adapter = new TestAdapter();
             adapter.AddUserToken("AADv2", "test", "user1", "dummyToken");
 
-            // Microsoft Graph Œn‚Ìƒ‚ƒbƒN
+            // Microsoft Graph ç³»ã®ãƒ¢ãƒƒã‚¯
             var mockGraphSDK = new Mock<IGraphServiceClient>();
-            // ƒ_ƒ~[‚Ì—\’è‚ğ•Ô‚·B
+            // ãƒ€ãƒŸãƒ¼ã®äºˆå®šã‚’è¿”ã™ã€‚
             DateTime datetime = DateTime.Now;
             mockGraphSDK.Setup(x => x.Me.CalendarView.Request(It.IsAny<List<QueryOption>>()).GetAsync())
                 .ReturnsAsync(() =>
@@ -50,7 +50,7 @@ namespace MyBot.UnitTest
             var bot = new GraphBot(conversationState, userState, msGraphService);
 
             await new TestFlow(adapter, bot.OnTurnAsync)
-                .Send("—\’è‚ğ’m‚è‚½‚¢")
+                .Send("äºˆå®šã‚’çŸ¥ã‚ŠãŸã„")
                 .AssertReply($"{datetime.ToString("HH:mm")}-{datetime.AddMinutes(30).ToString("HH:mm")} : Dummy 1")
                 .AssertReply($"{datetime.AddMinutes(60).ToString("HH:mm")}-{datetime.AddMinutes(90).ToString("HH:mm")} : Dummy 2")
                 .StartTestAsync();
