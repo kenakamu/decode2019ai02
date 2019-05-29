@@ -1,4 +1,6 @@
-# decode2019ai02
+# de:code2019 AI02
+ボット開発でも DevOps! BotBuilder のテスト手法
+
 de:code 2019 AI02 サンプルコード
 
 ## プレゼン資料
